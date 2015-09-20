@@ -34,6 +34,17 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+  
+  def followings
+    @user  = User.find(params[:id])
+    @followings_array = @user.following_users #1人のユーザーは複数の人をフォローする
+  end
+  
+  def followers
+    @user  = User.find(params[:id])
+    @followers_array = @user.follower_users #1人のユーザーは複数の人からフォローされる
+  end
+  
 
   private
 
