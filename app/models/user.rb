@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   
   validates :introduction, length: { maximum: 255 } # サインアップ時は未登録の為、空を許容
   validates :area, length: { maximum: 50 } # サインアップ時は未登録の為、空を許容
+  
+  has_many :microposts
 end
